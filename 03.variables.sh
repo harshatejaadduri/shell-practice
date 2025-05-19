@@ -1,7 +1,7 @@
 #!/bin/bash
 
-P1=Sarah
-P2=Mike
+P1=$1
+P2=$2
 
 echo "P1: Hey, P2! It’s been so long since we last met. How have you been?"
 echo "P2: I know, right? I’ve been good, just busy with work. What about you?"
