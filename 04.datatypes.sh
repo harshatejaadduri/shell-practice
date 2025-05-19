@@ -2,5 +2,5 @@
 
 a=100
 b=200
-sum=a+b
+sum=$(($a+$b))
 echo "sum of a and b is = $sum"
