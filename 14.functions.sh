@@ -26,6 +26,8 @@ then
     
 dnf install mysql -y
 
+
+if [ $? -eq 0 ]
 then
     echo "Installation is ....Successful"
 else
