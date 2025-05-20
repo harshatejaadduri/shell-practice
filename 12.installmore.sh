@@ -16,7 +16,7 @@ fi
 
 # $? checks exit status of top code and continues
 # if exit code is =0 then it checks whether theres any installed mysql
-# else it exits at exitcode 1
+# else it exits at exitcode 1 #1
 
 dnf list installed mysql
 
@@ -33,7 +33,7 @@ fi
 
 #again an exit code is generated here 
 #if the exit code = 0 then it goes to the command install mysql
-#if the exit code != 0 then it end at exit 1 
+#if the exit code != 0 then it end at exit 1 #2
 
 dnf install mysql -y
 
