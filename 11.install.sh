@@ -18,14 +18,17 @@
     echo "Root access is enabled"
  fi
  
+#now it checks wether mysql is installed or not 
+#exit status not equal to 0 true then it proceeds to next condition else prints package is already installed
+
 dnf list installed mysql
 if [ $? -ne 0 ]
 
 then 
-    echo "Package not installed...now Installing"
+    echo "Package is not installed...now Installing"
 else 
-    echo "Package already installed"
-    exit 1
+    echo "Package is already installed"
+    #exit 1
 fi 
 
  dnf install mysql -y
