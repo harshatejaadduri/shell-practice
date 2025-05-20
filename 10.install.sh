@@ -10,7 +10,10 @@
  then  
 
       echo "You dont have root permissions"
+# here shell doesnt end even after the condition is false and proceeds to install
+# so we use exit code 0 for success and 1-127 is failure
+    exit 1
+ fi
+ 
+ dnf install nginx -y
 
-       dnf install nginx -y
-
-fi
