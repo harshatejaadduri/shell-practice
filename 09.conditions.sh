@@ -2,7 +2,7 @@
 
 echo "Enter a no = $1"
 
-if [ $1 -eq 0 ]
+if [ $1 -gt 0 ]
 
 then 
 
