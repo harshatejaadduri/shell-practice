@@ -14,6 +14,7 @@
 # so we use exit code 0 for success and 1-127 is failure
     exit 1
 #here userid !=0 so it prints "You dont have root permissions" and ends @exit code 1
+ else
     echo "Root access is enabled"
  fi
  
