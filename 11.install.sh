@@ -28,7 +28,7 @@ then
     echo "Package is not installed...now Installing"
 else 
     echo "Package is already installed"
-    #exit 1
+    exit 1
 fi 
 
  dnf install mysql -y
