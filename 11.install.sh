@@ -18,7 +18,17 @@
     echo "Root access is enabled"
  fi
  
- dnf install nginxas -y
+dnf list installed mysql
+if [ $? -eq 0 ]
+
+then 
+    echo "Package not installed...now Installing"
+else 
+    echo "Package already installed"
+    exit 1
+fi 
+
+ dnf install mysql -y
 
 if [ $? -eq 0 ]
 
