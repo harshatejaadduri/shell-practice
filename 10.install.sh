@@ -10,8 +10,7 @@
  then  
 
       echo "You dont have root permissions"
-else 
 
-    dnf install nginx -y
+       dnf install nginx -y
 
 fi
