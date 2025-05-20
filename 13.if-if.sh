@@ -9,41 +9,31 @@ then
    echo "User has root access"
    dnf list installed mysql
 
-#now after checking installed mysql another exit code is generated 
-#if exit code is now 0 it displays "mysql is already installed" else "mysql is not installed...goin to install"
-if [ $? -ne 0 ]
-then
+#if userid =0 then it prints "User has root access"
+#then it runs the cmd list installed mysql 
+#if installed it shows exit_code of 0 else 1
+
+    if [ $? -ne 0 ]
+    then
     echo "mysql is not installed...goin to install"
     dnf install mysql -y
+#if mysql is not installed then the give condition is true 
+#now it runs the install cmd
+#if installed it shows exit_code of 0 else 1
 
-# after installing it produces another exit code 
-#if the exit code = 0 then it prints Successful else Failure
-if [ $? -eq 0 ]
+ if [ $? -eq 0 ]
 then
-    echo "Installation is ....Successful"
-else
+    echo "Installation is ....Successful"    #if exit_code is 0 then it prints  
+                                             
     echo "Installation is ....Failure"
-    exit 1
+    exit 1                                   #else it prints failure and stops running the script
 fi 
 else
-    echo "mysql is already installed"
+    echo "mysql is already installed"        #if exit_code is 1 then it prints and exits
     exit 1
 fi
 else
-   echo "User doesn't have root access"
-   exit 1
+   echo "User doesn't have root access"      #if user_id !=0 it directly prints and exits
+ 
 fi
-
-#----2----
-
-# $? checks exit status of top code and continues
-# if exit code is =0 then it checks whether theres any installed mysql
-# else it exits at exitcode 1 #1
-
-
-#----3----
-
-#again an exit code is generated here 
-#if the exit code = 0 then it goes to the command install mysql
-#if the exit code != 0 then it end at exit 1 #2
 
