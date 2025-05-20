@@ -17,7 +17,7 @@
 
  fi
  
- dnf install nginx -y
+ dnf install nginxas -y
 
 if [ $? -eq 0 ]
 
