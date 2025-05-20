@@ -23,12 +23,7 @@ dnf list installed mysql
 if [ $? -ne 0 ]
 then
     echo "mysql is not installed...goin to install"
-else
-    echo "mysql is already installed"
-    exit 1
-fi
-
-
+    
 dnf install mysql -y
 
 then
@@ -37,6 +32,12 @@ else
     echo "Installation is ....Failure"
     exit 1
 fi 
+else
+    echo "mysql is already installed"
+    
+fi
+
+
 
 
 dnf list installed python3
@@ -44,11 +45,7 @@ dnf list installed python3
 if [ $? -ne 0 ]
 then
     echo "python3 is not installed...goin to install"
-else
-    echo "python3 is already installed"
-    exit 1
-fi
-
+    
 dnf install python3 -y
 
 if [ $? -eq 0 ]
@@ -58,6 +55,11 @@ else
     echo "Installation is ....Failure"
     exit 1
 fi 
+else
+    echo "python3 is already installed"
+    
+fi
+
 
     dnf list installed nginx
 
@@ -65,11 +67,7 @@ fi
 if [ $? -ne 0 ]
 then
     echo "nginx is not installed...goin to install"
-else
-    echo "nginx is already installed"
-    exit 1
-fi
-
+    
 dnf install nginx -y
 
 if [ $? -eq 0 ]
@@ -79,3 +77,7 @@ else
     echo "Installation is ....Failure"
     exit 1
 fi 
+else
+    echo "nginx is already installed"
+    exit 1
+fi
