@@ -15,9 +15,9 @@ fi
 VALID() {
 if [ $? -eq 0 ]
 then
-    echo "Installation is ....Successful"
+    echo "Installation of $2 is ....Successful"
 else
-    echo "Installation is ....Failure"
+    echo "Installation of $2 is ....Failure"
     exit 1
 fi 
 }
