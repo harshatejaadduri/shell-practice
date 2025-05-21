@@ -16,6 +16,7 @@ logs_folder="/var/log/shell-script"
 script_name=$(echo $0 | cut -d "." -f2)
 log_file="$logs_folder/$script_name.log"
 
+mkdir -p logs_folder
 
 VALID() {
 if [ $1 -eq 0 ]
