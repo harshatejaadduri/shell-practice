@@ -13,7 +13,7 @@ script_name=$(echo $0 | cut -d "." -f1)
 log_file="$logs_folder/$script_name.log"
 
 mkdir -p $logs_folder
-pack=$("mysql" "python3" "nginx")
+pack=( "mysql" "python3" "nginx")
 #checks user id
 if [ $USERID -eq 0 ]
 
