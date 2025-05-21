@@ -35,7 +35,7 @@ else
 fi 
 }
 
-for packs in {$@}
+for packs in ${pack[@]}
 do
 
 dnf list installed $packs &>>$log_file
