@@ -18,9 +18,9 @@ mkdir -p $logs_folder
 if [ $USERID -eq 0 ]
 
 then 
-   echo "$G User has root access $N"
+   echo -e "$G User has root access $N"
 else
-   echo "$R User doesn't have root access $N"
+   echo -e "$R User doesn't have root access $N"
    exit 1
 fi
 
@@ -28,9 +28,9 @@ fi
 VALID() {
 if [ $1 -eq 0 ]
 then
-    echo " $N Installation of $2 is ....$G Successful"
+    echo -e " $N Installation of $2 is ....$G Successful"
 else
-    echo "$N Installation of $2 is ....$R Failure"
+    echo -e "$N Installation of $2 is ....$R Failure"
     exit 1
 fi 
 }
@@ -39,13 +39,13 @@ dnf list installed mysql &>>$log_file
 
 if [ $? -ne 0 ]
 then
-    echo "$R mysql is not installed...$G Installing" | tee -a $log_file
+    echo -e "$R mysql is not installed...$G Installing" | tee -a $log_file
     
 dnf install mysql -y &>>$log_file
 VALID $? "mysql"
 
 else
-    echo "$Y mysql is already installed" | tee -a $log_file
+    echo -e "$Y mysql is already installed" | tee -a $log_file
     
 fi
 
@@ -53,13 +53,13 @@ dnf list installed python3 &>>$log_file
 
 if [ $? -ne 0 ]
 then
-    echo "$R python3 is not installed...$G Installing"| tee -a $log_file
+    echo  -e "$R python3 is not installed...$G Installing"| tee -a $log_file
     
 dnf install python3 -y &>>$log_file
 VALID $? "python3"
 
 else
-    echo "$Y python3 is already installed" | tee -a $log_file
+    echo -e "$Y python3 is already installed" | tee -a $log_file
     
 fi
 
@@ -68,12 +68,12 @@ fi
 
 if [ $? -ne 0 ]
 then
-    echo "$R nginx is not installed...$G Installing" | tee -a $log_file
+    echo -e "$R nginx is not installed...$G Installing" | tee -a $log_file
     
 dnf install nginx -y  &>>$log_file
 VALID $? "nginx" 
 
 else
-    echo "$Y nginx is already installed" | tee -a $log_file
+    echo -e "$Y nginx is already installed" | tee -a $log_file
     exit 1
 fi
