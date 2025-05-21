@@ -13,7 +13,7 @@ else
 fi
 
 logs_folder="/var/log/shell-script"
-script_name=$(echo $0 | cut -d "." -f2)
+script_name=$(echo $0 | cut -d "." -f1)
 log_file="$logs_folder/$script_name.log"
 
 mkdir -p logs_folder
@@ -28,7 +28,7 @@ else
 fi 
 }
 
-dnf list installed mysql &>>$log_file.log
+dnf list installed mysql &>>$log_file
 
 if [ $? -ne 0 ]
 then
