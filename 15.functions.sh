@@ -29,7 +29,7 @@ then
     echo "mysql is not installed...goin to install"
     
 dnf install mysql -y
-VALID($1,"mysql")
+VALID $1 "mysql"
 
 else
     echo "mysql is already installed"
@@ -43,7 +43,7 @@ then
     echo "python3 is not installed...goin to install"
     
 dnf install python3 -y
-VALID($1,"python3")
+VALID $1 "python3"
 
 else
     echo "python3 is already installed"
@@ -58,7 +58,7 @@ then
     echo "nginx is not installed...goin to install"
     
 dnf install nginx -y
-VALID($1,"nginx")
+VALID $1 "nginx"
 
 else
     echo "nginx is already installed"
