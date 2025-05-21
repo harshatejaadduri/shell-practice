@@ -5,6 +5,13 @@ USERID=$(id -u)
 #checks user id
 if [ $USERID -eq 0 ]
 
+logs_folder="/var/log/shell-script"
+script_name=$(echo $0 | cut -d "." -f1)
+log_file="$logs_folder/$script_name.log"
+
+mkdir -p logs_folder
+
+
 then 
    echo "User has root access"
 else
@@ -12,11 +19,6 @@ else
    exit 1
 fi
 
-logs_folder="/var/log/shell-script"
-script_name=$(echo $0 | cut -d "." -f1)
-log_file="$logs_folder/$script_name.log"
-
-mkdir -p logs_folder
 
 VALID() {
 if [ $1 -eq 0 ]
