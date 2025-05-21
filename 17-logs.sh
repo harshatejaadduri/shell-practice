@@ -8,7 +8,7 @@ logs_folder="/var/log/shell-script"
 script_name=$(echo $0 | cut -d "." -f1)
 log_file="$logs_folder/$script_name.log"
 
-mkdir -p logs_folder
+mkdir -p $logs_folder
 
 #checks user id
 if [ $USERID -eq 0 ]
@@ -31,45 +31,45 @@ else
 fi 
 }
 
-dnf list installed mysql
+dnf list installed mysql &>>$log_file
 
 if [ $? -ne 0 ]
 then
-    echo "mysql is not installed...goin to install" 
+    echo "mysql is not installed...goin to install" &>>$log_file
     
-dnf install mysql -y 
+dnf install mysql -y &>>$log_file
 VALID $? "mysql"
 
 else
-    echo "mysql is already installed" 
+    echo "mysql is already installed" &>>$log_file
     
 fi
 
-dnf list installed python3 
+dnf list installed python3 &>>$log_file
 
 if [ $? -ne 0 ]
 then
-    echo "python3 is not installed...goin to install" 
+    echo "python3 is not installed...goin to install" &>>$log_file
     
-dnf install python3 -y 
+dnf install python3 -y &>>$log_file
 VALID $? "python3"
 
 else
-    echo "python3 is already installed" 
+    echo "python3 is already installed" &>>$log_file
     
 fi
 
 
-    dnf list installed nginx  
+    dnf list installed nginx  &>>$log_file
 
 if [ $? -ne 0 ]
 then
-    echo "nginx is not installed...goin to install" 
+    echo "nginx is not installed...goin to install" &>>$log_file
     
-dnf install nginx -y  
+dnf install nginx -y  &>>$log_file
 VALID $? "nginx" 
 
 else
-    echo "nginx is already installed" 
+    echo "nginx is already installed"  &>>$log_file
     exit 1
 fi
