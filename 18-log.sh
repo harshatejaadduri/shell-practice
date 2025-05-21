@@ -18,9 +18,9 @@ mkdir -p $logs_folder
 if [ $USERID -eq 0 ]
 
 then 
-   echo -e "$G User has root access $N"
+   echo -e "$G User has root access "
 else
-   echo -e "$R User doesn't have root access $N"
+   echo -e "$R User doesn't have root access "
    exit 1
 fi
 
